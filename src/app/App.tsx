@@ -1,28 +1,48 @@
-import { MenuItem } from './components/MenuItem';
-import { MenuSection } from './components/MenuSection';
-import logo from 'figma:asset/cb58cee0b3cb501980db1afb6c21eea550dcb8f3.png';
+import { MenuItem } from "./components/MenuItem";
+import { MenuSection } from "./components/MenuSection";
+const logo = new URL("../assets/yxlogo.png", import.meta.url).href;
+const fallbackLogo = new URL(
+  "../assets/cb58cee0b3cb501980db1afb6c21eea550dcb8f3.png",
+  import.meta.url,
+).href;
+const burgerImage = new URL("../assets/burger.png", import.meta.url).href;
+const lovstekImage = new URL(
+  "../assets/lovstek88485_7810484135934896261_n.jpg",
+  import.meta.url,
+).href;
+const polseImage = `${new URL("../assets/polse.png", import.meta.url).href}?v=2`;
+const softisImage = new URL("../assets/softis2.jpeg", import.meta.url).href;
 
 export default function App() {
   return (
     <div className="h-screen bg-gray-50 overflow-hidden flex flex-col">
       {/* Header */}
-      <header className="bg-[#cf112e] text-white py-4 px-8 shadow-lg">
-        <div className="max-w-[1920px] mx-auto flex items-center gap-4">
-          <div className="w-32 h-32 flex items-center justify-center">
-            <img src={logo} alt="YX Logo" className="w-full h-full object-contain" />
+      <header className="bg-[#cf112e] text-white h-24 py-0.5 px-8 shadow-lg">
+        <div className="max-w-[1920px] mx-auto h-full flex items-center gap-6">
+          <div className="w-20 h-20 flex items-center justify-center shrink-0">
+            <img
+              src={logo}
+              alt="YX Logo"
+              className="max-w-full max-h-full object-contain"
+              onError={(event) => {
+                event.currentTarget.src = fallbackLogo;
+              }}
+            />
           </div>
-          <h1 className="text-4xl">Nygårdsjøen</h1>
+          <h1 className="text-5xl font-semibold leading-none">Nygårdsjøen</h1>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="flex-1 max-w-[1920px] mx-auto px-8 py-6 overflow-hidden">
-        <div className="grid grid-cols-3 gap-8 h-full">
+        <div className="grid grid-cols-3 gap-5 h-full">
           {/* Left Column */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Burgers Section */}
             <section>
-              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">Burgermeny</h2>
+              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">
+                Burgermeny
+              </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
                 <div>
                   <h3 className="mb-1">Beef Burger</h3>
@@ -84,15 +104,17 @@ export default function App() {
 
             {/* Sausages Section */}
             <section>
-              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">Pølsemeny</h2>
+              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">
+                Pølsemeny
+              </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
-                <div className="flex justify-between">
-                  <span>Grillpølse</span>
-                  <span>72,-</span>
-                </div>
                 <div className="flex justify-between">
                   <span>Burger Dog</span>
                   <span>69,-</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Grillpølse</span>
+                  <span>72,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Ost & Bacon Pølse</span>
@@ -107,83 +129,117 @@ export default function App() {
           </div>
 
           {/* Middle Column */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Plate Dishes Section */}
             <section>
-              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">Tallerkenretter m/pommes frites</h2>
+              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">
+                Tallerkenretter m/pommes frites
+              </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
-                <div className="flex justify-between">
-                  <span>Kyllingtallerken</span>
-                  <span>229,-</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Biffsnadder</span>
-                  <span>000,-</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Lvstek</span>
-                  <span>179,-</span>
-                </div>
                 <div className="flex justify-between">
                   <span>Kyllingnuggets 5 stk.</span>
                   <span>149,-</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Biffsnadder</span>
+                  <span>179,-</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Løvstek</span>
+                  <span>179,-</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Kyllingtallerken</span>
+                  <span>229,-</span>
                 </div>
               </div>
             </section>
 
             {/* Extras/Sides Section */}
             <section>
-              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">Tilbehør</h2>
+              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">
+                Tilbehør
+              </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
                 <div className="flex justify-between">
-                  <span>Ost</span>
-                  <span>16 kr</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Bacon</span>
-                  <span>18 kr</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Råløk</span>
-                  <span>7,-</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sprøstekt løk</span>
-                  <span>7,-</span>
+                  <span>Sprøstekt løk / rå løk</span>
+                  <span>7 ,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Rekesalat</span>
-                  <span>10 kr</span>
+                  <span>10 ,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Potetsalat</span>
-                  <span>10 kr</span>
+                  <span>10 ,-</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Potetmos</span>
-                  <span>39 kr</span>
+                  <span>Ost</span>
+                  <span>16 ,-</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Pommes frites</span>
-                  <span>55 kr</span>
+                  <span>Bacon</span>
+                  <span>18 ,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Ekstra dressing</span>
-                  <span>19 kr</span>
+                  <span>19 ,-</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Potetmos</span>
+                  <span>39 ,-</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Pommes frites</span>
+                  <span>55 ,-</span>
                 </div>
                 <div className="flex justify-between pt-2 border-t border-gray-200">
                   <span>Drikke til maten</span>
-                  <span>+30,-</span>
+                  <span>+30 ,-</span>
                 </div>
               </div>
             </section>
           </div>
 
           {/* Right Column */}
-          <div className="space-y-6">
-            {/* Drinks Section */}
+          <div className="space-y-4 pt-10">
+            {/* Food Images Section */}
+            <div className="grid grid-cols-2 gap-2">
+              <div className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                <img
+                  src={burgerImage}
+                  alt="Burger"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                <img
+                  src={lovstekImage}
+                  alt="Løvstek"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                <img
+                  src={polseImage}
+                  alt="Pølse"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                <img
+                  src={softisImage}
+                  alt="Softis"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Softis Section */}
             <section>
-              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">Softis</h2>
+              <h2 className="text-2xl mb-3 pb-2 border-b-2 border-[#cf112e]">
+                Softis
+              </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
                 <div className="flex justify-between">
                   <span>Liten</span>
@@ -199,38 +255,6 @@ export default function App() {
                 </div>
               </div>
             </section>
-
-            {/* Food Images */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="aspect-square rounded-lg overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWVmJTIwYnVyZ2VyJTIwZ291cm1ldHxlbnwxfHx8fDE3NzMyMTgxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Burger"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square rounded-lg overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1771818708882-bd87d9c46297?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGVlc2UlMjBidXJnZXIlMjBkZWxpY2lvdXN8ZW58MXx8fHwxNzczMzEyODQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Cheese Burger"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square rounded-lg overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1655176649153-8bd6a37e4383?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmlsbGVkJTIwc2F1c2FnZSUyMGhvdCUyMGRvZ3xlbnwxfHx8fDE3NzMzMTI4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Hot Dog"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square rounded-lg overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1717294978892-cef673e1d17b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVuY2glMjBmcmllcyUyMGdvbGRlbnxlbnwxfHx8fDE3NzMyNDA5NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Fries"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </main>
