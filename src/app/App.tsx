@@ -45,7 +45,7 @@ export default function App() {
               </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
                 <div>
-                  <h3 className="mb-1">Beef Burger</h3>
+                  <h3 className="mb-1">Beef burger</h3>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600">100g</span>
@@ -66,7 +66,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="border-t border-gray-200 pt-2">
-                  <h3 className="mb-1">Cheese Burger</h3>
+                  <h3 className="mb-1">Cheese burger</h3>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600">100g</span>
@@ -83,7 +83,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="border-t border-gray-200 pt-2">
-                  <h3 className="mb-1">Bacon & Cheese Burger</h3>
+                  <h3 className="mb-1">Bacon & cheese burger</h3>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600">100g</span>
@@ -109,7 +109,7 @@ export default function App() {
               </h2>
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
                 <div className="flex justify-between">
-                  <span>Burger Dog</span>
+                  <span>Burger dog</span>
                   <span>69,-</span>
                 </div>
                 <div className="flex justify-between">
@@ -117,11 +117,11 @@ export default function App() {
                   <span>72,-</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Ost & Bacon Pølse</span>
+                  <span>Ost & bacon pølse</span>
                   <span>74,-</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Pølse m/Pommes Frites</span>
+                  <span>Pølse m/pommes frites</span>
                   <span>95,-</span>
                 </div>
               </div>
