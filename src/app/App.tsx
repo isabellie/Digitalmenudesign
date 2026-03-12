@@ -141,12 +141,12 @@ export default function App() {
                   <span>149,-</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Biffsnadder</span>
+                  <span>Løvstek</span>
                   <span>179,-</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Løvstek</span>
-                  <span>179,-</span>
+                  <span>Biffsnadder</span>
+                  <span>229,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Kyllingtallerken</span>
