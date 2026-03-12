@@ -243,15 +243,15 @@ export default function App() {
               <div className="bg-white rounded-lg shadow-md p-4 space-y-2">
                 <div className="flex justify-between">
                   <span>Liten</span>
-                  <span>59 kr</span>
+                  <span>59 ,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Stor</span>
-                  <span>69 kr</span>
+                  <span>69 ,-</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Strøssel</span>
-                  <span>7 kr</span>
+                  <span>7 ,-</span>
                 </div>
               </div>
             </section>
